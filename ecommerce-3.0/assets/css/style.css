@@ -1,0 +1,639 @@
+/* ===== STYLE COMPLET AVEC BOOTSTRAP ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --secondary: #f72585;
+    --success: #2ec973;
+    --danger: #ef476f;
+    --dark: #1a1a2e;
+    --gray: #6c757d;
+    --light: #f0f2f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    background: var(--white) !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #2b2d42 !important;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    background: var(--primary);
+    color: var(--white) !important;
+}
+
+.btn.float-end {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn.float-end:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+/* ===== SIDEBAR CATÉGORIES ===== */
+.list-group {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item {
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 12px !important;
+    transition: all 0.2s;
+    background: transparent;
+    padding: 0;
+}
+
+.list-group-item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #2b2d42;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.list-group-item a i {
+    width: 24px;
+    color: var(--primary);
+}
+
+.list-group-item:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.list-group-item.active {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);
+}
+
+.list-group-item.active a,
+.list-group-item.active a i {
+    color: var(--white);
+}
+
+/* ===== CARTES PRODUITS ===== */
+.card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: var(--white);
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    background: var(--white) !important;
+    border-top: 1px solid #eee;
+    padding: 1rem 1.25rem;
+}
+
+/* ===== BADGES ===== */
+.badge.text-bg-warning {
+    background: linear-gradient(135deg, var(--secondary), #d90429) !important;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    z-index: 20;
+}
+
+.badge.rounded-pill.text-bg-danger {
+    background: var(--danger) !important;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+}
+
+.badge.rounded-pill.text-bg-success {
+    background: linear-gradient(135deg, var(--success), #1f9a55) !important;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+}
+
+/* ===== COMPTEUR (quantité) - CORRIGÉ POUR MOBILE ===== */
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.counter .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 30px !important;
+    min-width: 36px;
+    text-align: center;
+}
+
+.counter .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+}
+
+.counter .btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.counter .btn-success {
+    background: linear-gradient(135deg, var(--success), #1f9a55);
+    border: none;
+}
+
+.counter .btn-danger {
+    background: var(--danger);
+    border: none;
+}
+
+.counter .form-control {
+    width: 55px;
+    text-align: center;
+    border-radius: 10px !important;
+    border: 1px solid #e0e0e0;
+    padding: 6px;
+    font-size: 14px;
+}
+
+/* Mobile : boutons bien visibles */
+@media (max-width: 768px) {
+    .counter {
+        gap: 6px;
+    }
+
+    .counter .btn {
+        padding: 8px 14px;
+        font-size: 14px;
+        min-width: 40px;
+    }
+
+    .counter .form-control {
+        width: 60px;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .counter {
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .counter .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 34px;
+    }
+
+    .counter .form-control {
+        width: 50px;
+        font-size: 13px;
+        padding: 6px;
+    }
+}
+
+/* ===== BOUTON AJOUTER AU PANIER ===== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+/* ===== SECTION TAILLES ===== */
+.size-section {
+    margin: 1rem 0;
+}
+
+.size-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.size-label i {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.size-btn {
+    min-width: 50px;
+    padding: 8px 16px;
+    background: var(--white);
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.size-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.size-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+/* ===== IMAGE PRODUIT ===== */
+.produit-image {
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+    padding: 1rem;
+    width: 70%;
+}
+
+.produit-image:hover {
+    transform: scale(1.02);
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lightbox-close:hover {
+    color: var(--danger);
+    transform: scale(1.1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .col-md-6 {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .container.py-2 {
+        padding: 1rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    .size-btn {
+        min-width: 45px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .produit-image {
+        width: 100%;
+    }
+
+    .col-md-4 {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        width: 100% !important;
+    }
+
+    .counter .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* ===== PANIER RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: white;
+        padding: 10px;
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--primary);
+        flex: 1;
+    }
+
+    .table tfoot form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .table tfoot input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* ===== BOUTON BURGER ===== */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ===== GRILLE PRODUITS RESPONSIVE (3 → 2 → 1) ===== */
+
+/* Conteneur des produits */
+.row > .row,
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+/* Chaque carte produit */
+.col-md-4,
+.col-md-6 {
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+/* Desktop : 3 cartes par ligne (col-md-4 = 33.33%) */
+@media (min-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+/* Tablette : 2 cartes par ligne */
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Mobile : 1 carte par ligne */
+@media (max-width: 767px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Correction pour l'espacement */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-footer {
+    margin-top: auto;
+}
+
+/* ===== PAGE PRODUIT - RESPONSIVE ===== */
+
+/* Sur mobile : image en haut, contenu en dessous */
+@media (max-width: 768px) {
+    /* Forcer la colonne en pleine largeur */
+    .col-md-6 {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Image prend toute la largeur */
+    .produit-image,
+    .img-fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    /* Titre et badge sur la même ligne */
+    .d-flex.align-items-center {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .d-flex.align-items-center h1 {
+        font-size: 1.5rem;
+        width: auto;
+    }
+
+    /* Description prend toute la largeur */
+    .text-justify {
+        text-align: left;
+    }
+
+    /* Prix en ligne */
+    .d-flex {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Tailles : disposition en ligne automatique */
+    .size-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .size-btn {
+        min-width: 45px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    /* Compteur et bouton */
+    .counter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .counter .form-control {
+        width: 60px;
+    }
+
+    /* Séparateur */
+    hr {
+        margin: 1rem 0;
+    }
+}
